@@ -126,6 +126,41 @@ exports.Prisma.UserScalarFieldEnum = {
   updated_at: 'updated_at'
 };
 
+exports.Prisma.CategoryScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+};
+
+exports.Prisma.ProductScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  price: 'price',
+  description: 'description',
+  imageUrl: 'imageUrl',
+  category_id: 'category_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+};
+
+exports.Prisma.OrderScalarFieldEnum = {
+  id: 'id',
+  table: 'table',
+  status: 'status',
+  draft: 'draft',
+  name: 'name',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+};
+
+exports.Prisma.ItemScalarFieldEnum = {
+  id: 'id',
+  amount: 'amount',
+  order_id: 'order_id',
+  product_id: 'product_id'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -143,7 +178,11 @@ exports.Prisma.NullsOrder = {
 
 
 exports.Prisma.ModelName = {
-  User: 'User'
+  User: 'User',
+  Category: 'Category',
+  Product: 'Product',
+  Order: 'Order',
+  Item: 'Item'
 };
 
 /**
