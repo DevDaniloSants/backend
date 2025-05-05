@@ -1,7 +1,12 @@
 import { Router } from 'express'
-import { createUserController } from '../../controllers/user/CreateUserController'
+
+import { makeCreateUserController } from 'src/factories/controllers/user'
 
 const userRoutes: Router = Router()
 
-userRoutes.post('/', createUserController.handle)
+userRoutes.post('/', async (req, res, next) => {
+    const createUserController = makeCreateUserController()
+
+    return await createUserController.handle(req, res, next)
+})
 export default userRoutes
