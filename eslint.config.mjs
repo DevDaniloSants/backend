@@ -12,6 +12,9 @@ export default defineConfig([
         files: ['**/*.{js,mjs,cjs,ts}'],
         plugins: { js },
         extends: ['js/recommended'],
+        rules: {
+            'linebreak-style': ['error', 'unix'],
+        },
     },
     {
         files: ['**/*.{js,mjs,cjs,ts}'],
