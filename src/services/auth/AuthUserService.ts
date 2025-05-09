@@ -3,7 +3,7 @@ import { Jwt } from 'src/adapters/jwt'
 
 import { GetUserRepository } from 'src/repository/user'
 
-export interface IAuthRequestt {
+export interface IAuthRequest {
     email: string
     password: string
 }
@@ -15,7 +15,7 @@ export class AuthUserService {
         private jwt: Jwt
     ) {}
 
-    async execute({ email, password }: IAuthRequestt) {
+    async execute({ email, password }: IAuthRequest) {
         const user = await this.getUserRepository.getUserByEmail(email)
 
         if (!user) {
