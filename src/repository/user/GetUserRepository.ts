@@ -2,20 +2,16 @@ import { User } from '@prisma/client'
 import { prisma } from 'prisma/prisma'
 
 export interface IGetUserRepository {
-    getUserByEmail(email: string): Promise<User>
+    getUserByEmail(email: string): Promise<User | null>
 }
 
 export class GetUserRepository implements IGetUserRepository {
-    async getUserByEmail(email: string): Promise<User> {
+    async getUserByEmail(email: string): Promise<User | null> {
         const user = await prisma.user.findFirst({
             where: {
                 email,
             },
         })
-
-        if (!user) {
-            throw new Error('User not found')
-        }
 
         return user
     }
