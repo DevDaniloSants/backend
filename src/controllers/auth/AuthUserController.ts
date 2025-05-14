@@ -12,7 +12,7 @@ export class AuthUserController {
                 password,
             })
 
-            res.json({ message: 'User authenticated', user })
+            res.json(user)
         } catch (error) {
             next(error)
         }
