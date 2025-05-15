@@ -4,6 +4,7 @@ export interface IGetUserDTO {
     id: string
     name: string
     email: string
+    password?: string
 }
 
 export interface IGetUserRepository {
@@ -21,6 +22,7 @@ export class GetUserRepository implements IGetUserRepository {
                 id: true,
                 name: true,
                 email: true,
+                password: true,
             },
         })
 

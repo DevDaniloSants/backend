@@ -24,7 +24,7 @@ export class AuthUserService {
 
         const passwordMatch = await this.passwordHasher.compare(
             password,
-            user.password
+            user.password!
         )
 
         if (!passwordMatch) {

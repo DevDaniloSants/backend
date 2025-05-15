@@ -7,7 +7,7 @@ class DetailsUserController {
         try {
             const user_id = req.user_id
 
-            if (!user_id) throw new Error('User ID is required')
+            if (!user_id) throw new Error('Unauthorized')
 
             const user = await this.detailsUserService.execute(user_id)
 
