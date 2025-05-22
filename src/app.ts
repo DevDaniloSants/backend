@@ -1,6 +1,7 @@
 import express, { Express, Response, Request, NextFunction } from 'express'
 import routes from './routes/routes'
 import cors from 'cors'
+import path from 'path'
 
 class App {
     server: Express
@@ -14,6 +15,10 @@ class App {
 
     middlewares() {
         this.server.use(express.json())
+        this.server.use(
+            '/files',
+            express.static(path.resolve(__dirname, '..', 'tmp'))
+        )
         this.server.use(cors())
     }
 
